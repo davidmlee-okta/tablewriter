@@ -1,5 +1,5 @@
-module github.com/olekukonko/tablewriter
+module github.com/davidmlee-okta/tablewriter
 
-go 1.12
+go 1.15
 
-require github.com/mattn/go-runewidth v0.0.9
+require github.com/mattn/go-runewidth v0.0.10

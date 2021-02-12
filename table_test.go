@@ -130,11 +130,11 @@ func TestCSVInfo(t *testing.T) {
 	table.Render()
 
 	got := buf.String()
-	want := `   FIELD   |     TYPE     | NULL | KEY | DEFAULT |     EXTRA       
+	want := `   FIELD   |     TYPE     | NULL | KEY | DEFAULT |     EXTRA
 -----------+--------------+------+-----+---------+-----------------
-  user_id  | smallint(5)  | NO   | PRI | NULL    | auto_increment  
-  username | varchar(10)  | NO   |     | NULL    |                 
-  password | varchar(100) | NO   |     | NULL    |                 
+  user_id  | smallint(5)  | NO   | PRI | NULL    | auto_increment
+  username | varchar(10)  | NO   |     | NULL    |
+  password | varchar(100) | NO   |     | NULL    |
 `
 	checkEqual(t, got, want, "CSV info failed")
 }
@@ -186,17 +186,17 @@ func TestNoBorder(t *testing.T) {
 	table.AppendBulk(data)                                // Add Bulk Data
 	table.Render()
 
-	want := `    DATE   |       DESCRIPTION        |  CV2  | AMOUNT   
+	want := `    DATE   |       DESCRIPTION        |  CV2  | AMOUNT
 -----------+--------------------------+-------+----------
-  1/1/2014 | Domain name              |  2233 | $10.98   
-  1/1/2014 | January Hosting          |  2233 | $54.95   
-           |     (empty)              |       |          
-           |     (empty)              |       |          
-  1/4/2014 | February Hosting         |  2233 | $51.00   
-  1/4/2014 | February Extra Bandwidth |  2233 | $30.00   
-  1/4/2014 |     (Discount)           |  2233 | -$1.00   
+  1/1/2014 | Domain name              |  2233 | $10.98
+  1/1/2014 | January Hosting          |  2233 | $54.95
+           |     (empty)              |       |
+           |     (empty)              |       |
+  1/4/2014 | February Hosting         |  2233 | $51.00
+  1/4/2014 | February Extra Bandwidth |  2233 | $30.00
+  1/4/2014 |     (Discount)           |  2233 | -$1.00
 -----------+--------------------------+-------+----------
-                                        TOTAL | $145.93  
+                                        TOTAL | $145.93
                                       --------+----------
 `
 
@@ -394,14 +394,14 @@ func TestPrintCaptionWithFooter(t *testing.T) {
 	table.AppendBulk(data)                                                                                 // Add Bulk Data
 	table.Render()
 
-	want := `    DATE   |       DESCRIPTION        |  CV2  | AMOUNT   
+	want := `    DATE   |       DESCRIPTION        |  CV2  | AMOUNT
 -----------+--------------------------+-------+----------
-  1/1/2014 | Domain name              |  2233 | $10.98   
-  1/1/2014 | January Hosting          |  2233 | $54.95   
-  1/4/2014 | February Hosting         |  2233 | $51.00   
-  1/4/2014 | February Extra Bandwidth |  2233 | $30.00   
+  1/1/2014 | Domain name              |  2233 | $10.98
+  1/1/2014 | January Hosting          |  2233 | $54.95
+  1/4/2014 | February Hosting         |  2233 | $51.00
+  1/4/2014 | February Extra Bandwidth |  2233 | $30.00
 -----------+--------------------------+-------+----------
-                                        TOTAL | $146.93  
+                                        TOTAL | $146.93
                                       --------+----------
 This is a very long caption. The text should wrap to the
 width of the table.
@@ -761,10 +761,10 @@ func TestSubclass(t *testing.T) {
 	}
 	table.Render()
 
-	want := `  A  The Good               500  
-  B  The Very very Bad Man  288  
-  C  The Ugly               120  
-  D  The Gopher             800  
+	want := `  A  The Good               500
+  B  The Very very Bad Man  288
+  C  The Ugly               120
+  D  The Gopher             800
 `
 	checkEqual(t, buf.String(), want, "test subclass failed")
 }
@@ -1171,11 +1171,11 @@ func TestKubeFormat(t *testing.T) {
 	table.AppendBulk(data) // Add Bulk Data
 	table.Render()
 
-	want := `DATE    	DESCRIPTION        	CV2 	AMOUNT 
-1/1/2014	jan_hosting        	2233	$10.98	
-1/1/2014	feb_hosting        	2233	$54.95	
-1/4/2014	feb_extra_bandwidth	2233	$51.00	
-1/4/2014	mar_hosting        	2233	$30.00	
+	want := `DATE    	DESCRIPTION        	CV2 	AMOUNT
+1/1/2014	jan_hosting        	2233	$10.98
+1/1/2014	feb_hosting        	2233	$54.95
+1/4/2014	feb_extra_bandwidth	2233	$51.00
+1/4/2014	mar_hosting        	2233	$30.00
 `
 
 	checkEqual(t, buf.String(), want, "kube format rendering failed")

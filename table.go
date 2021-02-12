@@ -919,9 +919,9 @@ func (t *Table) parseDimension(str string, colKey, rowKey int) []string {
 	// specified width.
 	if t.autoWrap {
 		// If there's a maximum allowed width for wrapping, use that.
-		if maxWidth > t.mW {
-			maxWidth = t.mW
-		}
+		//if maxwidth > t.mw {
+		//maxwidth = t.mw
+		// }
 
 		// In the process of doing so, we need to recompute maxWidth. This
 		// is because perhaps a word in the cell is longer than the
